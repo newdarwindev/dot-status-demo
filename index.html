@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An interactive, fully synthetic status dashboard for a fictional dot cloud agent. No connected accounts, live telemetry, or real quotas."
+    />
+    <meta name="theme-color" content="#f5f6fa" />
+    <title>dot / status — synthetic demo</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="dot status demo home"
+        ><span class="brand-symbol" aria-hidden="true">•</span> dot
+        <span class="wordmark-divider">/</span>
+        <span class="wordmark-section">status</span></a
+      >
+      <nav aria-label="Project">
+        <a href="./evidence/">Test evidence <span aria-hidden="true">↗</span></a
+        ><a href="https://github.com/newdarwindev/dot-status-demo"
+          >Source <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section class="intro" aria-labelledby="title">
+        <div>
+          <p class="eyebrow">A LITTLE PEACE OF MIND</p>
+          <h1 id="title">Your agent, at a glance.</h1>
+          <p class="intro-copy">
+            A status dashboard concept for a dot cloud machine.<br
+              class="desktop-break"
+            />
+            Explore the signals. All the numbers are made up.
+          </p>
+        </div>
+        <div class="demo-stamp">
+          <span class="tiny-dot" aria-hidden="true"></span> SIMULATED DATA<span
+            class="stamp-caption"
+            >Not connected to any account</span
+          >
+        </div>
+      </section>
+      <section class="scenario-bar" aria-label="Demo scenario controls">
+        <div>
+          <strong>Try a scenario</strong
+          ><span>Same dashboard, different day.</span>
+        </div>
+        <div
+          class="scenario-buttons"
+          role="group"
+          aria-label="Choose a synthetic scenario"
+        >
+          <button type="button" data-scenario="healthy" aria-pressed="true">
+            Healthy</button
+          ><button type="button" data-scenario="warning" aria-pressed="false">
+            Warning</button
+          ><button type="button" data-scenario="degraded" aria-pressed="false">
+            Degraded
+          </button>
+        </div>
+      </section>
+      <div id="dashboard" data-state="healthy">
+        <section class="overview" aria-label="Scenario summary">
+          <div class="summary-heading">
+            <span class="status-orb" aria-hidden="true">✓</span>
+            <div>
+              <p class="eyebrow">FICTIONAL ENVIRONMENT / DEMO-01</p>
+              <h2 id="summary-title">All systems comfortable</h2>
+              <p id="summary-description">
+                Plenty of headroom for the next good idea.
+              </p>
+            </div>
+          </div>
+          <div class="sample-time">
+            <span>Fixed sample timestamp</span
+            ><time datetime="2026-10-29T09:41:00Z">29 Oct 2026 · 09:41 UTC</time
+            ><small>Not a live reading</small>
+          </div>
+        </section>
+        <div class="dashboard-grid">
+          <section class="panel machine-panel" aria-labelledby="machine-title">
+            <div class="panel-top">
+              <div>
+                <p class="eyebrow">CLOUD MACHINE</p>
+                <h2 id="machine-title">Room to work.</h2>
+              </div>
+              <span id="machine-state" class="state-label">Healthy</span>
+            </div>
+            <div class="disk-reading">
+              <span id="disk-free">72</span
+              ><span class="disk-unit">GB free</span>
+            </div>
+            <p class="muted-light" id="disk-detail">
+              28 GB used of 100 GB · fictional disk
+            </p>
+            <div
+              class="disk-bar"
+              role="progressbar"
+              aria-label="Fictional disk used in GB"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="28"
+            >
+              <span id="disk-fill"></span>
+            </div>
+            <div class="disk-legend">
+              <span
+                ><i aria-hidden="true"></i> Used
+                <strong id="disk-used">28 GB</strong></span
+              ><span>Free <strong id="disk-free-label">72 GB</strong></span>
+            </div>
+            <div class="machine-foot">
+              <span class="machine-icon" aria-hidden="true">▤</span>
+              <div>
+                <strong>demo-worker-01</strong
+                ><span>Fictional host · no telemetry collected</span>
+              </div>
+            </div>
+          </section>
+          <section class="panel quota-panel" aria-labelledby="quota-title">
+            <div class="panel-top">
+              <div>
+                <p class="eyebrow">OPENAI ACCOUNT CONCEPT</p>
+                <h2 id="quota-title">Illustrative allocation.</h2>
+              </div>
+              <span class="outline-label">NOT CONNECTED</span>
+            </div>
+            <p class="panel-copy">
+              A UI concept, not your usage or an OpenAI limit.
+            </p>
+            <div class="quota-item">
+              <div class="quota-line">
+                <h3>Request units</h3>
+                <span
+                  ><strong id="requests-used">320</strong> / 1,000 demo
+                  units</span
+                >
+              </div>
+              <div
+                class="quota-track"
+                role="progressbar"
+                aria-label="Illustrative request allocation in demo units"
+                aria-valuemin="0"
+                aria-valuemax="1000"
+                aria-valuenow="320"
+              >
+                <span id="requests-fill"></span>
+              </div>
+              <p id="requests-remaining">680 demo units remaining</p>
+            </div>
+            <div class="quota-item">
+              <div class="quota-line">
+                <h3>Token units</h3>
+                <span
+                  ><strong id="tokens-used">84,000</strong> / 200,000 demo
+                  units</span
+                >
+              </div>
+              <div
+                class="quota-track token-track"
+                role="progressbar"
+                aria-label="Illustrative token allocation in demo units"
+                aria-valuemin="0"
+                aria-valuemax="200000"
+                aria-valuenow="84000"
+              >
+                <span id="tokens-fill"></span>
+              </div>
+              <p id="tokens-remaining">116,000 demo units remaining</p>
+            </div>
+            <div class="quota-note">
+              <span aria-hidden="true">ⓘ</span>
+              <p>
+                Invented units and capacities. No API, account, plan, billing,
+                or quota service is connected.
+              </p>
+            </div>
+          </section>
+          <section class="metrics" aria-label="Synthetic activity metrics">
+            <article class="panel metric">
+              <span class="metric-icon" aria-hidden="true">◷</span>
+              <h2>Uptime</h2>
+              <p id="uptime" class="metric-number">4d 12h</p>
+              <p>Fictional continuous runtime</p>
+            </article>
+            <article class="panel metric">
+              <span class="metric-icon" aria-hidden="true">✓</span>
+              <h2>Tasks completed</h2>
+              <p id="tasks" class="metric-number">128</p>
+              <p>Illustrative last 24 hours</p>
+            </article>
+            <article class="panel metric">
+              <span class="metric-icon" aria-hidden="true">≋</span>
+              <h2>Queue depth</h2>
+              <p id="queue" class="metric-number">2</p>
+              <p>Made-up waiting tasks</p>
+            </article>
+          </section>
+          <section class="panel signals" aria-labelledby="signals-title">
+            <div class="panel-top">
+              <div>
+                <p class="eyebrow">SCENARIO NOTES</p>
+                <h2 id="signals-title">What needs attention?</h2>
+              </div>
+              <span class="decorative-number" aria-hidden="true">01—03</span>
+            </div>
+            <ol id="notes"></ol>
+          </section>
+        </div>
+      </div>
+      <p id="announcement" class="sr-only" role="status" aria-live="polite">
+        Healthy synthetic scenario selected.
+      </p>
+      <details class="transparency">
+        <summary>
+          About this demo &amp; its data <span aria-hidden="true">+</span>
+        </summary>
+        <div>
+          <h2>No real system is being monitored.</h2>
+          <p>
+            Every figure comes from hardcoded synthetic fixtures in this public
+            repository. Scenario buttons only switch local sample data. There
+            are no network requests for metrics, no account connections, no
+            sign-in, no analytics, and no browser storage.
+          </p>
+          <p>
+            Disk capacity, uptime, tasks, queue depth, and “quota” allocations
+            are invented for visual demonstration. These are not OpenAI product
+            limits, pricing, real quota units, or a claim that an account-status
+            API exists. Refreshing resets the dashboard to Healthy.
+          </p>
+        </div>
+      </details>
+      <noscript
+        ><p class="noscript-note">
+          JavaScript is disabled. The fixed Healthy example remains visible;
+          scenario switching needs JavaScript.
+        </p></noscript
+      >
+    </main>
+    <footer>
+      <span
+        >dot / status <span class="footer-separator">·</span> A synthetic
+        dashboard, thoughtfully built.</span
+      ><span>No live data. No connected accounts.</span>
+    </footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
