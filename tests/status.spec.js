@@ -64,6 +64,7 @@ test('repeated switches, keyboard activation, disclosure dismissal and reload', 
   await page.screenshot({
     path: testInfo.outputPath(`disclosure-${testInfo.project.name}.png`),
     fullPage: true,
+    animations: 'disabled',
   });
   await disclosure.click();
   await expect(page.locator('details')).not.toHaveAttribute('open', '');

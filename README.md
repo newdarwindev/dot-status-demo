@@ -50,7 +50,8 @@ focused Node unit tests, and the relative-path Vite production build. ESLint cap
 cyclomatic complexity at **8**, nesting at **3**, parameters at **3**, and function
 length at **55** nonblank/noncomment lines. See [AGENTS.md](AGENTS.md).
 
-Real-browser Playwright tests cover all three scenarios on desktop Chromium and
+Real-browser Playwright tests use the production build (run `npm run check` first),
+not the development server. They cover all three scenarios on desktop Chromium and
 mobile Chromium (Pixel 7 emulation), coherent labels and values, repeated clicks,
 keyboard activation, opening and dismissing the disclosure, reload/reset,
 horizontal overflow, no external requests, no browser storage, and JavaScript

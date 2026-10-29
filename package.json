@@ -13,7 +13,8 @@
     "test": "node --test tests/unit.test.js",
     "test:ui": "playwright test",
     "check": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run build",
-    "evidence": "node scripts/evidence.js"
+    "evidence": "node scripts/evidence.js",
+    "preview": "vite preview --host 127.0.0.1"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
